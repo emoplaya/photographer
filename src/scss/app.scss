@@ -4,7 +4,7 @@
 @import './components/all';
 
 body {
-    background-color: $background;
+    background-color: $creamy;
 }
 
 [class*="__container"] {
@@ -14,21 +14,9 @@ body {
     /*отступы безопасности*/
 }
 
-
-
-.auth__container {
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    h1 {
-        text-align: center;
-    }
-
-    .auth__card {
-        border: 1px solid black;
-        width: 600px;
-        height: 600px;
-    }
 }

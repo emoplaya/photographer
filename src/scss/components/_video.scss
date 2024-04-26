@@ -1,0 +1,23 @@
+.video__container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+
+    .video {
+        margin-top: 60px;
+        width: 1100px;
+        height: 625px;
+        background-color: black;
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 54px;
+        margin-bottom: 70px;
+    }
+}

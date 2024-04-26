@@ -1,0 +1,14 @@
+.navbar {
+    margin-top: 40px;
+
+    .navbar__menu {
+        display: flex;
+        gap: 40px;
+        text-transform: uppercase;
+
+        .navbar__item {
+            font-family: "Forum";
+            letter-spacing: 2px;
+        }
+    }
+}

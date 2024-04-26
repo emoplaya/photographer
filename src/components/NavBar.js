@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <img width="260" height="62" src={logo} alt="logo" />
+        <img width="201" height="48" src={logo} alt="logo" />
       </div>
       <nav className="header__menu menu">
         <ul className="menu__list">

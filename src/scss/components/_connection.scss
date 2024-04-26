@@ -1,0 +1,25 @@
+.connection__container {
+    height: 333px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .connection__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            font-family: "Forum";
+        }
+
+        h2 {
+            font-size: 24px;
+            font-family: "Forum";
+        }
+    }
+}
