@@ -1,5 +1,8 @@
 .navbar {
-    margin-top: 40px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .navbar__menu {
         display: flex;
@@ -7,6 +10,41 @@
         text-transform: uppercase;
 
         .navbar__item {
+            font-family: "Forum";
+            letter-spacing: 2px;
+            background-image: linear-gradient(to right,
+                    $brown,
+                    $brown 50%,
+                    #2d2d2d 50%);
+            background-size: 200% 100%;
+            background-position: -100%;
+            position: relative;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar__item:before {
+            content: '';
+            background: $brown;
+            display: block;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar__item:hover {
+            background-position: 0;
+        }
+
+        .navbar__item:hover::before {
+            width: 100%;
+        }
+
+        .active {
             font-family: "Forum";
             letter-spacing: 2px;
         }

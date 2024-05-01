@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/img/logo.svg";
 import vk from "../assets/img/vk-icon.svg";
 import telegram from "../assets/img/telegram-icon.svg";
@@ -13,19 +13,31 @@ const NavBar = () => {
       </div>
       <nav className="header__menu menu">
         <ul className="menu__list">
-          <Link to={"/"}>
-            <li className="menu__item">Главная</li>
-          </Link>
-          <Link to={"/portfolio"}>
-            <li className="menu__item">Портфолио</li>
-          </Link>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => (isActive ? "active" : "menu__item")}
+          >
+            Главная
+          </NavLink>
+          <NavLink
+            to={"/portfolio"}
+            className={({ isActive }) => (isActive ? "active" : "menu__item")}
+          >
+            Портфолио
+          </NavLink>
           <li className="menu__item">Альбомы</li>
-          <Link to={"/reviews"}>
-            <li className="menu__item">Отзывы</li>
-          </Link>
-          <Link to={"/contacts"}>
-            <li className="menu__item">Контакты</li>
-          </Link>
+          <NavLink
+            to={"/reviews"}
+            className={({ isActive }) => (isActive ? "active" : "menu__item")}
+          >
+            Отзывы
+          </NavLink>
+          <NavLink
+            to={"/contacts"}
+            className={({ isActive }) => (isActive ? "active" : "menu__item")}
+          >
+            Контакты
+          </NavLink>
         </ul>
       </nav>
       <div className="header__socials">

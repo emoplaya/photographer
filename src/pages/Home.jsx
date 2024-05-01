@@ -2,8 +2,12 @@ import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../components/Button";
 import Modal from "../components/Modal";
+import PortfolioCard from "../components/portfolioCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SliderPhoto from "../assets/img/slider/Rectangle2.jpg";
+import SliderData from "../components/SliderData";
+import ElementaryPhoto from "../assets/img/elementaryschool/8.jpg";
+import PrimaryPhoto from "../assets/img/primaryschool/1.jpg";
+import KinderPhoto from "../assets/img/kindergarden/5.jpg";
 import ParallaxPhoto from "../assets/img/parallax.png";
 import { Parallax } from "react-parallax";
 import Accordion from "../components/Accordion/Accordion";
@@ -12,7 +16,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 
 const faqList = [
   {
@@ -71,6 +75,7 @@ const Home = () => {
           <input type="submit" value="ОТПРАВИТЬ" />
         </form>
       </Modal>
+
       <div className="hero">
         <Swiper
           spaceBetween={30}
@@ -84,16 +89,19 @@ const Home = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={SliderPhoto} />
+            <img src={SliderData[0]} alt="slide1" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <img src={SliderData[1]} alt="slide2" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            <img src={SliderData[2]} alt="slide3" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            <img src={SliderData[3]} alt="slide4" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={SliderData[4]} alt="slide5" />
           </SwiperSlide>
         </Swiper>
         <div className="hero__info">
@@ -104,6 +112,7 @@ const Home = () => {
           <Button>подробнее</Button>
         </div>
       </div>
+      <div className="hero__overlay"></div>
       <div className="connection__container">
         <div className="connection__info">
           <div className="connection__text">
@@ -121,23 +130,30 @@ const Home = () => {
           <h1>Портфолио</h1>
           <div className="portfolio">
             <div className="portfolio__cards">
-              <div className="card"></div>
-              <div className="card"></div>
-              <div className="card"></div>
+              <PortfolioCard img={ElementaryPhoto} title="Старшая школа" />
+              <PortfolioCard img={PrimaryPhoto} title="Начальная школа" />
+              <PortfolioCard img={KinderPhoto} title="Детский сад" />
             </div>
           </div>
         </div>
       </Parallax>
       <div className="video__container">
-        <div className="video"></div>
+        <iframe
+          title="video"
+          className="video"
+          src="https://www.youtube.com/embed/N7Ps9L2JhXs?playlist=N7Ps9L2JhXs&loop=1&autoplay=1&mute=1"
+          allow="autoplay"
+          loop="1"
+        />
+
         <p>
           Для получения бесплатной консультации пишите нам в удобный для вас
           мессенджер
         </p>
         <div className="socials">
-          <Button>Вконтакте</Button>
-          <Button>Telegram</Button>
-          <Button>Whatsapp</Button>
+          <button className="connection__button vk">Вконтакте</button>
+          <button className="connection__button tg">Telegram</button>
+          <button className="connection__button ws">Whatsapp</button>
         </div>
       </div>
       <div className="accordion-bgc">

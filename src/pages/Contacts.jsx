@@ -3,7 +3,6 @@ import vk from "../assets/img/vk-icon.svg";
 import telegram from "../assets/img/telegram-icon.svg";
 import whatsapp from "../assets/img/whatsapp-icon.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SliderPhoto from "../assets/img/slider/Rectangle2.jpg";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -19,7 +18,7 @@ const Contacts = () => {
             grabCursor={true}
             centeredSlides={true}
             loop={true}
-            slidesPerView={"3"}
+            slidesPerView={"2"}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
@@ -36,25 +35,25 @@ const Contacts = () => {
             className="swiper_container"
           >
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={SliderPhoto} alt="slide_image" />
+              <img src={"SliderPhoto"} alt="slide_image" />
             </SwiperSlide>
           </Swiper>
           <p>

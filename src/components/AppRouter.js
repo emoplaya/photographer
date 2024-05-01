@@ -9,6 +9,9 @@ import Home from "../pages/Home";
 import Contacts from "../pages/Contacts";
 import Portfolio from "../pages/Portfolio";
 import Reviews from "../pages/Reviews";
+import ElementarySchool from "../pages/ElementarySchool";
+import PrimarySchool from "../pages/PrimarySchool";
+import KinderGarden from "../pages/KinderGarden";
 
 const publicRoutes = [
   { path: "/", Component: Home },
@@ -16,6 +19,9 @@ const publicRoutes = [
   { path: "/portfolio", Component: Portfolio },
   { path: "/reviews", Component: Reviews },
   { path: "*", Component: Home },
+  { path: "/portfolio", Component: ElementarySchool },
+  { path: "/primary", Component: PrimarySchool },
+  { path: "/kinder", Component: KinderGarden },
 ];
 const AppRouter = () => {
   return (
