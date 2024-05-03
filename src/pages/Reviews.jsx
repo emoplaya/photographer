@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewBlock from "../components/ReviewBlock";
+import ReviewBlock from "../components/ReviewBlock/ReviewBlock";
 const Reviews = () => {
   return (
     <div className="review__grid">

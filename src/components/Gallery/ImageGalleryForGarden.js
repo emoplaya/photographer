@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import ArrowLeft from "../assets/img/left-arrow.svg";
-import ArrowRight from "../assets/img/right-arrow.svg";
-import Close from "../assets/img/close.svg";
+import ArrowLeft from "../../assets/img/icons/left-arrow.svg";
+import ArrowRight from "../../assets/img/icons/right-arrow.svg";
+import Close from "../../assets/img/icons/close.svg";
 
-const ImageGallery = (props) => {
+const ImageGalleryForGarden = (props) => {
   const [activeCategory, setActiveCategory] = useState("");
   const [isStudioActive, setIsStudioActive] = useState(false);
   const [isSchoolActive, setIsSchoolActive] = useState(false);
@@ -50,7 +50,7 @@ const ImageGallery = (props) => {
           className={isSchoolActive ? "active" : "categories__button"}
           onClick={() => setCategory("school")}
         >
-          Фотосессия в школе
+          Фотосессия в детском саду
         </button>
       </ul>
       {overlay.img && (
@@ -115,4 +115,4 @@ const ImageGallery = (props) => {
   );
 };
 
-export default ImageGallery;
+export default ImageGalleryForGarden;

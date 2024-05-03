@@ -2,11 +2,11 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
-import Button from "../components/Button";
-import Modal from "../components/Modal";
+import Button from "../components/Button/Button";
+import Modal from "../components/ModalEmail/Modal";
 import SliderData from "../components/data/SliderData";
 
-import PortfolioCard from "../components/portfolioCard";
+import PortfolioCard from "../components/PortfolioCard/portfolioCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax } from "react-parallax";
 
@@ -21,25 +21,9 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade } from "swiper/modules";
+import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import faqList from "../components/data/faqList";
 
-const faqList = [
-  {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
-  },
-  {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
-  },
-  {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
-  },
-  {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
-  },
-];
 const Home = () => {
   const [modalActive, setModalActive] = useState(false);
   const form = useRef();
@@ -126,7 +110,7 @@ const Home = () => {
               живые эмоции ваших детей в фотографиях
             </p>
           </div>
-          <Button onClick={() => setModalActive(true)}>СВЯЗАТЬСЯ</Button>
+          <Button onClick={() => setModalActive(true)}>Задать вопрос</Button>
         </div>
       </div>
       <Parallax strength={300} bgImage={ParallaxPhoto}>
@@ -148,14 +132,7 @@ const Home = () => {
         </div>
       </Parallax>
       <div className="video__container">
-        <iframe
-          title="video"
-          className="video"
-          src="https://www.youtube.com/embed/N7Ps9L2JhXs?playlist=N7Ps9L2JhXs&loop=1&autoplay=1&mute=1"
-          allow="autoplay"
-          loop="1"
-        />
-
+        <VideoPlayer />
         <p>
           Для получения бесплатной консультации пишите нам в удобный для вас
           мессенджер

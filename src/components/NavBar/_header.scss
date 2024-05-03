@@ -78,4 +78,32 @@
         justify-content: center;
         gap: 25px;
     }
+
+    .enter__button {
+        position: absolute;
+        right: 100px;
+        padding: 0px 20px;
+        color: #2d2d2d;
+        font-size: 12px;
+        font-family: 'Ubuntu';
+        letter-spacing: 2px;
+        border-radius: 50px;
+        cursor: pointer;
+        width: fit-content;
+        height: 30px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+        border: 1px solid $brown;
+        background-color: $creamy;
+    }
+
+    .enter__button:hover {
+        background-color: rgba($brown, 0.6);
+        color: $creamy;
+    }
+
+
 }

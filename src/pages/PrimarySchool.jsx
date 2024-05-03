@@ -1,6 +1,6 @@
 import React from "react";
-import PortfolioNavBar from "../components/PortfolioNavBar";
-import ImageGallery from "../components/ImageGallery";
+import PortfolioNavBar from "../components/PortfolioNavbar/PortfolioNavBar";
+import ImageGallery from "../components/Gallery/ImageGallery";
 import primaryData from "../components/data/primaryData";
 const PrimarySchool = () => {
   return (

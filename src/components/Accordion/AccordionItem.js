@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { ReactComponent as PlusIcon } from "../../assets/img/plus-icon.svg";
+import { ReactComponent as PlusIcon } from "../../assets/img/icons/plus-icon.svg";
 
 const AccordionItem = ({ faqItem, onClick, isOpen }) => {
   const itemRef = useRef(null);

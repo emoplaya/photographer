@@ -10,16 +10,6 @@ import Photo9 from "../../assets/img/kindergarden/9.jpg";
 import Photo10 from "../../assets/img/kindergarden/10.jpg";
 import Photo11 from "../../assets/img/kindergarden/11.jpg";
 import Photo12 from "../../assets/img/kindergarden/12.jpg";
-import Photo13 from "../../assets/img/kindergarden/13.jpg";
-import Photo14 from "../../assets/img/kindergarden/14.jpg";
-import Photo15 from "../../assets/img/kindergarden/15.jpg";
-import Photo16 from "../../assets/img/kindergarden/16.jpg";
-import Photo17 from "../../assets/img/kindergarden/17.jpg";
-import Photo18 from "../../assets/img/kindergarden/18.jpg";
-import Photo19 from "../../assets/img/kindergarden/19.jpg";
-import Photo20 from "../../assets/img/kindergarden/20.jpg";
-import Photo21 from "../../assets/img/kindergarden/21.jpg";
-import Photo22 from "../../assets/img/kindergarden/22.jpg";
 
 const data = [
   {
@@ -81,51 +71,6 @@ const data = [
     id: 12,
     src: Photo12,
     category: "school",
-  },
-  {
-    id: 13,
-    src: Photo13,
-    category: "costume",
-  },
-  {
-    id: 14,
-    src: Photo14,
-    category: "costume",
-  },
-  {
-    id: 15,
-    src: Photo15,
-    category: "costume",
-  },
-  {
-    id: 16,
-    src: Photo16,
-    category: "costume",
-  },
-  {
-    id: 17,
-    src: Photo17,
-    category: "costume",
-  },
-  {
-    id: 18,
-    src: Photo18,
-    category: "costume",
-  },
-  {
-    id: 19,
-    src: Photo19,
-    category: "costume",
-  },
-  {
-    id: 20,
-    src: Photo20,
-    category: "costume",
-  },
-  {
-    id: 21,
-    src: Photo21,
-    category: "costume",
   },
 ];
 

@@ -1,7 +1,7 @@
-import React from "react";
-import NavBar from "./components/NavBar";
+import React, { useState } from "react";
+import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter } from "react-router-dom";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 import "./scss/app.scss";
 import AppRouter from "./components/AppRouter";

@@ -25,6 +25,12 @@ const PortfolioNavBar = () => {
           >
             Детский сад
           </NavLink>
+          <NavLink
+            to={"/costumes"}
+            className={({ isActive }) => (isActive ? "active" : "navbar__item")}
+          >
+            Костюмированная Фотосессия
+          </NavLink>
         </ul>
       </div>
     </div>

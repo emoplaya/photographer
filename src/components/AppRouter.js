@@ -9,9 +9,12 @@ import Home from "../pages/Home";
 import Contacts from "../pages/Contacts";
 import Portfolio from "../pages/Portfolio";
 import Reviews from "../pages/Reviews";
-import ElementarySchool from "../pages/ElementarySchool";
 import PrimarySchool from "../pages/PrimarySchool";
 import KinderGarden from "../pages/KinderGarden";
+import Costumes from "../pages/Costumes";
+import Login from "../pages/Login";
+import Cart from "../pages/Cart";
+import PlaceOrder from "../pages/PlaceOrder";
 
 const publicRoutes = [
   { path: "/", Component: Home },
@@ -19,9 +22,12 @@ const publicRoutes = [
   { path: "/portfolio", Component: Portfolio },
   { path: "/reviews", Component: Reviews },
   { path: "*", Component: Home },
-  { path: "/portfolio", Component: ElementarySchool },
   { path: "/primary", Component: PrimarySchool },
   { path: "/kinder", Component: KinderGarden },
+  { path: "/costumes", Component: Costumes },
+  { path: "/login", Component: Login },
+  { path: "/cart", Component: Cart },
+  { path: "/order", Component: PlaceOrder },
 ];
 const AppRouter = () => {
   return (

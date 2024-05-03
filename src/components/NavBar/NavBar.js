@@ -1,16 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/img/logo.svg";
-import vk from "../assets/img/vk-icon.svg";
-import telegram from "../assets/img/telegram-icon.svg";
-import whatsapp from "../assets/img/whatsapp-icon.svg";
+import logo from "../../assets/img/icons/logo.svg";
 
 const NavBar = () => {
   return (
     <header className="header">
-      <div className="header__logo">
-        <img width="201" height="48" src={logo} alt="logo" />
-      </div>
+      <NavLink to={"/"}>
+        <div className="header__logo">
+          <img width="201" height="48" src={logo} alt="logo" />
+        </div>
+      </NavLink>
       <nav className="header__menu menu">
         <ul className="menu__list">
           <NavLink
@@ -25,7 +24,6 @@ const NavBar = () => {
           >
             Портфолио
           </NavLink>
-          <li className="menu__item">Альбомы</li>
           <NavLink
             to={"/reviews"}
             className={({ isActive }) => (isActive ? "active" : "menu__item")}
@@ -40,19 +38,9 @@ const NavBar = () => {
           </NavLink>
         </ul>
       </nav>
-      <div className="header__socials">
-        <ul className="social__list">
-          <li className="socials__item">
-            <img width="27" height="27" src={telegram} alt="logo" />
-          </li>
-          <li className="socials__item">
-            <img width="27" height="27" src={vk} alt="logo" />
-          </li>
-          <li className="socials__item">
-            <img width="27" height="27" src={whatsapp} alt="logo" />
-          </li>
-        </ul>
-      </div>
+      <NavLink to={"/login"} className="enter__button">
+        купить фотографию
+      </NavLink>
     </header>
   );
 };

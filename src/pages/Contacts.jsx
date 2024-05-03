@@ -1,8 +1,8 @@
 import React from "react";
 
-import vk from "../assets/img/vk-icon.svg";
-import telegram from "../assets/img/telegram-icon.svg";
-import whatsapp from "../assets/img/whatsapp-icon.svg";
+import vk from "../assets/img/icons/vk-icon.svg";
+import telegram from "../assets/img/icons/telegram-icon.svg";
+import whatsapp from "../assets/img/icons/whatsapp-icon.svg";
 
 import ContactsSlider from "../components/data/ContactsSliderData";
 import { Swiper, SwiperSlide } from "swiper/react";
