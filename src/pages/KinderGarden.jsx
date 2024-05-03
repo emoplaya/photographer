@@ -1,15 +1,13 @@
 import React from "react";
-import Categories from "../components/Categories";
 import PortfolioNavBar from "../components/PortfolioNavBar";
-import ImageGallery from "../components/ImageGallery";
+import ImageGalleryForGarden from "../components/ImageGalleryForGarden";
 import kinderData from "../components/data/kinderData";
 const KinderGarden = () => {
   return (
-    <div>
+    <>
       <PortfolioNavBar />
-      <Categories />;
-      <ImageGallery data={kinderData} />
-    </div>
+      <ImageGalleryForGarden data={kinderData} />
+    </>
   );
 };
 

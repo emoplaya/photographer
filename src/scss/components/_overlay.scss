@@ -1,0 +1,57 @@
+.overlay {
+    background-color: $creamy;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1000;
+    gap: 100px;
+
+    &__prev {
+        position: absolute;
+        left: 0;
+        margin-left: 100px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50px;
+        border: none;
+        background-color: $brown;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    &__prev:hover {
+        background-color: rgba($brown, 0.6);
+    }
+
+    &__next {
+        position: absolute;
+        right: 0;
+        margin-right: 100px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50px;
+        border: none;
+        background-color: $brown;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    &__next:hover {
+        background-color: rgba($brown, 0.6);
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        background-color: $creamy;
+        margin-right: 100px;
+        margin-top: 50px;
+        cursor: pointer;
+    }
+}

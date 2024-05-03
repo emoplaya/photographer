@@ -1,5 +1,6 @@
 .categories {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -19,13 +20,30 @@
         align-items: center;
         justify-content: center;
         transition: 0.5s;
+        border: none;
+        text-transform: lowercase;
     }
 
     .categories__button:hover {
-        background-color: rgb(228, 196, 161)
+        background-color: rgba($brown, 0.6)
     }
 
     .active {
-        background-color: rgb(228, 196, 161)
+        background-color: rgba($brown, 0.6);
+        padding: 5px 15px;
+        color: white;
+        font-size: 12px;
+        font-family: 'Ubuntu';
+        letter-spacing: 2px;
+        border-radius: 50px;
+        cursor: pointer;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+        border: none;
+        text-transform: lowercase;
     }
+
 }

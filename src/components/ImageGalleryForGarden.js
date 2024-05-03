@@ -4,19 +4,26 @@ import ArrowLeft from "../assets/img/left-arrow.svg";
 import ArrowRight from "../assets/img/right-arrow.svg";
 import Close from "../assets/img/close.svg";
 
-const ImageGallery = (props) => {
+const ImageGalleryForGarden = (props) => {
   const [activeCategory, setActiveCategory] = useState("");
   const [isStudioActive, setIsStudioActive] = useState(false);
   const [isSchoolActive, setIsSchoolActive] = useState(false);
+  const [isCostumeActive, setIsCostumeActive] = useState(false);
 
   const setCategory = (category) => {
     setActiveCategory(category);
     if (category === "studio") {
       setIsStudioActive(true);
       setIsSchoolActive(false);
+      setIsCostumeActive(false);
     } else if (category === "school") {
       setIsStudioActive(false);
       setIsSchoolActive(true);
+      setIsCostumeActive(false);
+    } else if (category === "costume") {
+      setIsStudioActive(false);
+      setIsSchoolActive(false);
+      setIsCostumeActive(true);
     }
   };
 
@@ -50,7 +57,13 @@ const ImageGallery = (props) => {
           className={isSchoolActive ? "active" : "categories__button"}
           onClick={() => setCategory("school")}
         >
-          Фотосессия в школе
+          Фотосессия в детском саду
+        </button>
+        <button
+          className={isCostumeActive ? "active" : "categories__button"}
+          onClick={() => setCategory("costume")}
+        >
+          костюмированная Фотосессия
         </button>
       </ul>
       {overlay.img && (
@@ -115,4 +128,4 @@ const ImageGallery = (props) => {
   );
 };
 
-export default ImageGallery;
+export default ImageGalleryForGarden;

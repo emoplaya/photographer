@@ -1,21 +1,25 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+
 import Button from "../components/Button";
 import Modal from "../components/Modal";
+import SliderData from "../components/data/SliderData";
+
 import PortfolioCard from "../components/portfolioCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SliderData from "../components/SliderData";
+import { Parallax } from "react-parallax";
+
 import ElementaryPhoto from "../assets/img/elementaryschool/8.jpg";
 import PrimaryPhoto from "../assets/img/primaryschool/1.jpg";
 import KinderPhoto from "../assets/img/kindergarden/5.jpg";
 import ParallaxPhoto from "../assets/img/parallax.png";
-import { Parallax } from "react-parallax";
+
 import Accordion from "../components/Accordion/Accordion";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import { Autoplay, EffectFade } from "swiper/modules";
 
 const faqList = [
@@ -130,9 +134,15 @@ const Home = () => {
           <h1>Портфолио</h1>
           <div className="portfolio">
             <div className="portfolio__cards">
-              <PortfolioCard img={ElementaryPhoto} title="Старшая школа" />
-              <PortfolioCard img={PrimaryPhoto} title="Начальная школа" />
-              <PortfolioCard img={KinderPhoto} title="Детский сад" />
+              <Link to={"/portfolio"}>
+                <PortfolioCard img={ElementaryPhoto} title="Старшая школа" />
+              </Link>
+              <Link to={"/primary"}>
+                <PortfolioCard img={PrimaryPhoto} title="Начальная школа" />
+              </Link>
+              <Link to={"/kinder"}>
+                <PortfolioCard img={KinderPhoto} title="Детский сад" />
+              </Link>
             </div>
           </div>
         </div>
