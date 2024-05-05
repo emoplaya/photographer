@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StoreContext } from "../../components/context/StoreContext";
+import { StoreContext } from "../../context/StoreContext";
 import addIcon from "../../assets/img/icons/add_icon_white.png";
 import removeIcon from "../../assets/img/icons/remove_icon_red.png";
 import addIconGreen from "../../assets/img/icons/add_icon_green.png";

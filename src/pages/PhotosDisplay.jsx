@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StoreContext } from "../components/context/StoreContext";
+import { StoreContext } from "../context/StoreContext";
 import PhotoItem from "../components/PhotoItem/PhotoItem";
 
 const PhotosDisplay = () => {

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/icons/logo.svg";
 import cart from "../../assets/img/icons/cart.svg";
+import { StoreContext } from "../../context/StoreContext";
 
 const NavBar = ({ setShowLogin }) => {
+  const { getTotalCartAmount } = useContext(StoreContext);
   return (
     <header className="header">
       <NavLink to={"/"}>
@@ -42,8 +44,9 @@ const NavBar = ({ setShowLogin }) => {
           </NavLink>
         </ul>
       </nav>
-      <NavLink to={"/cart"}>
-        <img src={cart} alt="" className="cart-icon" />
+      <NavLink to={"/cart"} className="cart-icon">
+        <img src={cart} alt="" />
+        <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
       </NavLink>
       <button className="enter__button" onClick={() => setShowLogin(true)}>
         купить фотографию
