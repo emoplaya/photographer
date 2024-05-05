@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-
-import "./scss/app.scss";
-import AppRouter from "./components/AppRouter";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import AppRouter from "./components/AppRouter";
+import LoginPopup from "./components/LoginPopup/LoginPopup";
+
+import "./scss/app.scss";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -18,15 +20,19 @@ const ScrollToTop = () => {
   return null;
 };
 function App() {
+  const [showLogin, setShowLogin] = useState(false);
   return (
-    <div className="wrapper">
-      <BrowserRouter>
-        <NavBar />
-        <ScrollToTop />
-        <AppRouter />
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <>
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
+      <div className="wrapper">
+        <BrowserRouter>
+          <NavBar setShowLogin={setShowLogin} />
+          <ScrollToTop />
+          <AppRouter />
+          <Footer />
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 

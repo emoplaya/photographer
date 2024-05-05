@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,9 +12,9 @@ import Reviews from "../pages/Reviews";
 import PrimarySchool from "../pages/PrimarySchool";
 import KinderGarden from "../pages/KinderGarden";
 import Costumes from "../pages/Costumes";
-import Login from "../pages/Login";
 import Cart from "../pages/Cart";
 import PlaceOrder from "../pages/PlaceOrder";
+import PhotosDisplay from "../pages/PhotosDisplay";
 
 const publicRoutes = [
   { path: "/", Component: Home },
@@ -25,9 +25,9 @@ const publicRoutes = [
   { path: "/primary", Component: PrimarySchool },
   { path: "/kinder", Component: KinderGarden },
   { path: "/costumes", Component: Costumes },
-  { path: "/login", Component: Login },
   { path: "/cart", Component: Cart },
   { path: "/order", Component: PlaceOrder },
+  { path: "/photosdisplay", Component: PhotosDisplay },
 ];
 const AppRouter = () => {
   return (

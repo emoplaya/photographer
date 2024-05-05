@@ -1,10 +1,11 @@
 .footer {
+    height: 80px;
     padding: 30px 0;
     border-top: 1px solid $brown;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $creamy;
-
+    margin-top: auto;
     bottom: 0;
 }

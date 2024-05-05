@@ -6,6 +6,7 @@
 @import './review';
 @import './connectionbutton';
 @import './overlay';
+@import './cart';
 
 @import '../../components/VideoPlayer/video';
 @import '../../components/PortfolioCard/portfoliocard';
@@ -14,6 +15,9 @@
 @import '../../components/Gallery/gallery';
 @import '../../components/NavBar/header';
 @import '../../components/PortfolioNavbar/portfolionavbar';
-@import '../../components/Review/reviewBlock';
+@import '../../components/ReviewBlock/reviewBlock';
 @import '../../components/Accordion/accordion';
 @import '../../components/Button/button';
+@import '../../components/LoginPopup/loginpopup';
+@import '../../components/PhotoItem/photoitem';
+@import './photodisplay';

@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/icons/logo.svg";
+import cart from "../../assets/img/icons/cart.svg";
 
-const NavBar = () => {
+const NavBar = ({ setShowLogin }) => {
   return (
     <header className="header">
       <NavLink to={"/"}>
@@ -36,11 +37,17 @@ const NavBar = () => {
           >
             Контакты
           </NavLink>
+          <NavLink to={"/photosdisplay"}>
+            <button>items</button>
+          </NavLink>
         </ul>
       </nav>
-      <NavLink to={"/login"} className="enter__button">
-        купить фотографию
+      <NavLink to={"/cart"}>
+        <img src={cart} alt="" className="cart-icon" />
       </NavLink>
+      <button className="enter__button" onClick={() => setShowLogin(true)}>
+        купить фотографию
+      </button>
     </header>
   );
 };
