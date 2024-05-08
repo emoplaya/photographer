@@ -16,7 +16,7 @@ const PhotosDisplay = () => {
                 key={index}
                 id={item._id}
                 type={item.type}
-                image={item.img}
+                image={item.image}
                 price={item.price}
               />
             );

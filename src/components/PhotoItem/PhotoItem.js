@@ -5,11 +5,16 @@ import removeIcon from "../../assets/img/icons/remove_icon_red.png";
 import addIconGreen from "../../assets/img/icons/add_icon_green.png";
 
 const PhotoItem = ({ id, name, price, type, image }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } =
+    useContext(StoreContext);
   return (
     <div className="photo-item">
       <div className="photo-item-img-container">
-        <img className="photo-item-image" src={image} alt="" />
+        <img
+          className="photo-item-image"
+          src={url + "/images/" + image}
+          alt=""
+        />
 
         {!cartItems[id] ? (
           <img

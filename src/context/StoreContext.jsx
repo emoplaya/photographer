@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import photos_list from "../components/data/photos_list";
+import axios from "axios";
 
 export const StoreContext = createContext(null);
 
@@ -7,6 +7,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const url = "http://localhost:5000";
   const [token, setToken] = useState("");
+  const [photos_list, setPhotosList] = useState([]);
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -29,10 +30,20 @@ const StoreContextProvider = (props) => {
     }
     return totalAmount;
   };
+
+  const fetchPhotosList = async () => {
+    const response = await axios.get(url + "/api/photos/list");
+    setPhotosList(response.data.data);
+  };
+
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setToken(localStorage.getItem("token"));
+    async function loadData() {
+      await fetchPhotosList();
+      if (localStorage.getItem("token")) {
+        setToken(localStorage.getItem("token"));
+      }
     }
+    loadData();
   }, []);
   const contextValue = {
     photos_list,
