@@ -1,11 +1,18 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/icons/logo.svg";
 import cart from "../../assets/img/icons/cart.svg";
 import { StoreContext } from "../../context/StoreContext";
 
 const NavBar = ({ setShowLogin }) => {
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+  };
   return (
     <header className="header">
       <NavLink to={"/"}>
@@ -48,9 +55,26 @@ const NavBar = ({ setShowLogin }) => {
         <img src={cart} alt="" />
         <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
       </NavLink>
-      <button className="enter__button" onClick={() => setShowLogin(true)}>
-        купить фотографию
-      </button>
+      {!token ? (
+        <button className="enter__button" onClick={() => setShowLogin(true)}>
+          купить фотографию
+        </button>
+      ) : (
+        <div className="navbar-profile">
+          <img src={cart} alt="" />
+          <ul className="nav-profile-dropdown">
+            <li>
+              <img src={cart} alt="" />
+              <p>Orders</p>
+            </li>
+            <hr />
+            <li onClick={logout}>
+              <img src={cart} alt="" />
+              <p>Logout</p>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
