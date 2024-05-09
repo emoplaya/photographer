@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/icons/logo.svg";
 import cart from "../../assets/img/icons/cart.svg";
+import profile from "../../assets/img/icons/profile.svg";
+import bag from "../../assets/img/icons/bag.svg";
+import exit from "../../assets/img/icons/exit.svg";
 import { StoreContext } from "../../context/StoreContext";
 
 const NavBar = ({ setShowLogin }) => {
@@ -46,34 +49,48 @@ const NavBar = ({ setShowLogin }) => {
           >
             Контакты
           </NavLink>
-          <NavLink to={"/photosdisplay"}>
-            <button>items</button>
-          </NavLink>
+          {!token ? (
+            <></>
+          ) : (
+            <NavLink
+              to={"/photosdisplay"}
+              className={({ isActive }) => (isActive ? "active" : "menu__item")}
+            >
+              Магазин
+            </NavLink>
+          )}
+          {!token ? (
+            <button
+              className="enter__button"
+              onClick={() => setShowLogin(true)}
+            >
+              купить фотографию
+            </button>
+          ) : (
+            <div className="navbar-profile">
+              <img width="17px" src={profile} alt="" />
+              <ul className="nav-profile-dropdown">
+                <li>
+                  <img src={bag} alt="" />
+                  <p>Заказы</p>
+                </li>
+                <hr />
+                <li onClick={logout}>
+                  <img src={exit} alt="" />
+                  <p>Выйти</p>
+                </li>
+              </ul>
+            </div>
+          )}
         </ul>
       </nav>
-      <NavLink to={"/cart"} className="cart-icon">
-        <img src={cart} alt="" />
-        <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
-      </NavLink>
       {!token ? (
-        <button className="enter__button" onClick={() => setShowLogin(true)}>
-          купить фотографию
-        </button>
+        <></>
       ) : (
-        <div className="navbar-profile">
+        <NavLink to={"/cart"} className="cart-icon">
           <img src={cart} alt="" />
-          <ul className="nav-profile-dropdown">
-            <li>
-              <img src={cart} alt="" />
-              <p>Orders</p>
-            </li>
-            <hr />
-            <li onClick={logout}>
-              <img src={cart} alt="" />
-              <p>Logout</p>
-            </li>
-          </ul>
-        </div>
+          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
+        </NavLink>
       )}
     </header>
   );

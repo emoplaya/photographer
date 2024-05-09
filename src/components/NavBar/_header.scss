@@ -118,6 +118,7 @@
 
 .navbar-profile {
     position: relative;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-profile-dropdown {
@@ -125,17 +126,18 @@
     display: none;
     right: 0;
     z-index: 1;
+
 }
 
 .navbar-profile:hover .nav-profile-dropdown {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #fff2ef;
+    background-color: $creamy;
     padding: 12px 25px;
     border-radius: 4px;
-    border: 1px solid tomato;
-    outline: 2px solid white;
+    border: 1px solid $brown;
+    outline: 2px solid $creamy;
     list-style: none;
 }
 
@@ -150,6 +152,6 @@
     width: 20px;
 }
 
-.nav-profile-dropdown li:hover {
-    color: white;
+.nav-profile-dropdown p:hover {
+    color: $brown;
 }
