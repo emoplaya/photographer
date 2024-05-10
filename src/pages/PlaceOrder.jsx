@@ -41,50 +41,42 @@ const PlaceOrder = () => {
             onChange={onChangeHandler}
             value={data.firstName}
             type="text"
-            placeholder="first name"
+            placeholder="Ваше имя"
           />
           <input
             name="lastName"
             onChange={onChangeHandler}
             value={data.lastName}
             type="text"
-            placeholder="last name"
+            placeholder="Ваша фамилия"
           />
         </div>
         <input
           type="email"
           onChange={onChangeHandler}
           value={data.email}
-          placeholder="email address"
+          placeholder="Почта"
         />
         <input
           name="phone"
           onChange={onChangeHandler}
           value={data.phone}
           type="text"
-          placeholder="Phone"
+          placeholder="Телефон"
         />
       </div>
       <div className="place-order-right">
         <div className="cart-total">
-          <h2>Cart Total</h2>
+          <h2>Корзина</h2>
           <div>
-            <div className="cart-total-details">
-              <p>Subtotal</p>
-              <p>{getTotalCartAmount()}</p>
-            </div>
             <hr />
             <div className="cart-total-details">
-              <p>Delivery Fee</p>
-              <p>{getTotalCartAmount() === 0 ? 0 : 2}</p>
+              <p>Итого</p>
+              <p>{getTotalCartAmount()} ₽</p>
             </div>
             <hr />
-            <div className="cart-total-details">
-              <b>Total</b>
-              <b>{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
-            </div>
           </div>
-          <button type="submit">proceed to payment</button>
+          <button type="submit">оформить заказ</button>
         </div>
       </div>
     </form>

@@ -60,12 +60,13 @@ const NavBar = ({ setShowLogin }) => {
             </NavLink>
           )}
           {!token ? (
-            <button
+            <NavLink
+              to={"/loginpopup"}
               className="enter__button"
               onClick={() => setShowLogin(true)}
             >
               купить фотографию
-            </button>
+            </NavLink>
           ) : (
             <div className="navbar-profile">
               <img width="17px" src={profile} alt="" />

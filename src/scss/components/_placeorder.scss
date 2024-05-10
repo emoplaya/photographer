@@ -1,10 +1,14 @@
-.place-order {
+form .place-order {
     margin-top: 100px;
     display: flex;
     align-items: start;
     justify-content: space-between;
     gap: 50px;
     margin-top: 100px;
+}
+
+.order {
+    display: flex;
 }
 
 .place-order-left {

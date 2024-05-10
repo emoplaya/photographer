@@ -1,5 +1,6 @@
 .cart {
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .cart-icon {
@@ -22,7 +23,7 @@
 }
 
 .cart-items-item img {
-    width: 50px;
+    width: 100px;
 }
 
 .cart hr {
@@ -60,13 +61,28 @@
 }
 
 .cart-total button {
-    border: none;
+    background-color: $brown;
+    padding: 20px 40px;
     color: white;
-    background-color: tomato;
-    width: max(15vw, 200px);
-    padding: 12px 0px;
-    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Ubuntu';
+    letter-spacing: 2px;
+    border-radius: 50px;
     cursor: pointer;
+    width: fit-content;
+    height: 50px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    border: none;
+}
+
+
+
+.cart-total button:hover {
+    background-color: rgba($brown, 0.6);
 }
 
 .cart-promocode {

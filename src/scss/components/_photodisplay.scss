@@ -1,10 +1,23 @@
+.background {
+    background-image: url('../../assets/img/parallax.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
 .photo-display-container {
     margin-top: 100px;
+    margin-bottom: 100px;
 
 }
 
 .photo-display {
     margin-top: 30px;
+
+    h2 {
+        color: white;
+    }
 }
 
 .photo-display h2 {

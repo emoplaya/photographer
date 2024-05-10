@@ -4,7 +4,7 @@ import addIcon from "../../assets/img/icons/add_icon_white.png";
 import removeIcon from "../../assets/img/icons/remove_icon_red.png";
 import addIconGreen from "../../assets/img/icons/add_icon_green.png";
 
-const PhotoItem = ({ id, name, price, type, image }) => {
+const PhotoItem = ({ id, name, price, category, image }) => {
   const { cartItems, addToCart, removeFromCart, url } =
     useContext(StoreContext);
   return (
@@ -32,8 +32,8 @@ const PhotoItem = ({ id, name, price, type, image }) => {
         )}
       </div>
       <div className="photo-item-info">
-        <p className="photo-item-price">{price} rub</p>
-        <p className="photo-item-desc">{type}</p>
+        <p className="photo-item-price">{price} ₽</p>
+        <p className="photo-item-desc">Размер: {category}</p>
       </div>
     </div>
   );
