@@ -60,7 +60,7 @@ const ImageGallery = (props) => {
             onClick={() => imgAction()}
             style={{ position: "absolute", top: 0, right: "0" }}
           >
-            <img src={Close} alt="" />
+            <img src={Close} width="50px" alt="" />
           </button>
           <button
             className="overlay__prev"

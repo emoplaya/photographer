@@ -5,10 +5,41 @@
 }
 
 .review__grid {
-    width: 100%;
-    height: 100vh;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .review__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .review__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .review__grid {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 750px) {
+    .review__container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
 }

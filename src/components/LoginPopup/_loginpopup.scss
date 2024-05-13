@@ -3,7 +3,7 @@
     z-index: 190000;
     width: 100%;
     height: 100%;
-    background-color: $creamy;
+    background-color: #00000090;
     display: grid;
 }
 
@@ -19,6 +19,7 @@
     border-radius: 8px;
     font-size: 14px;
     animation: fadeIn 0.5s;
+
 }
 
 .login-popup-title {
@@ -39,23 +40,22 @@
     gap: 20px;
 }
 
+.login-popup-inputs input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 .login-popup-container button {
-    background-color: $brown;
-    padding: 20px 40px;
-    color: white;
-    font-size: 12px;
-    font-family: 'Ubuntu';
-    letter-spacing: 2px;
-    border-radius: 50px;
-    cursor: pointer;
-    width: fit-content;
-    height: 50px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
     border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: $brown;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .login-popup-container button:hover {
@@ -64,9 +64,12 @@
 
 .login-popup-condition {
     display: flex;
-    align-items: start;
+    align-items: center;
     gap: 8px;
-    margin-top: -15px;
+
+    .checkbox {
+        margin-top: 0;
+    }
 }
 
 .login-popup-condition input {

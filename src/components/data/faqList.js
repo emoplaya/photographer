@@ -1,19 +1,19 @@
 const faqList = [
   {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
+    q: "СКОЛЬКО СТОИТ ВАША ФОТОСЕССИЯ?",
+    a: "Все зависит от множества факторов. Фотосессия в школе или в студии, с привлечением визажиста или нет, с одним героем в кадре или компанией? Напишите мне в личные сообщения, расскажу подробности",
   },
   {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
+    q: "КАК БЫСТРО ВЫ ОТДАЕТЕ ФОТОГРАФИИ?",
+    a: "Как можно быстрее. Обычно этот срок не превышает одной-двух недель.",
   },
   {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
+    q: "ОТДАЕТЕ ЛИ ВЫ RAW-ФАЙЛЫ?",
+    a: "Нет, только фотографии в формате JPG. RAW за отдельную плату.",
   },
   {
-    q: "lorem ipsum dolor sit amet",
-    a: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero sapiente aliquam molestiae nam! Quo dicta facere praesentium obcaecati voluptatum quis repellendus odit fugit? Officia dolore accusamus fugiat facilis natus!",
+    q: "КАКОЙ ТЕХНИКОЙ ВЫ ПОЛЬЗУЕТЕСЬ?",
+    a: "Я снимаю на Nikon D750 и Nikon Z6II",
   },
 ];
 

@@ -2,11 +2,13 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
-import Button from "../components/Button/Button";
+import { motion } from "framer-motion";
+
+import { MButton } from "../components/Button/Button";
 import Modal from "../components/ModalEmail/Modal";
 import SliderData from "../components/data/SliderData";
+import { MPortfolioCard } from "../components/PortfolioCard/portfolioCard";
 
-import PortfolioCard from "../components/PortfolioCard/portfolioCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax } from "react-parallax";
 
@@ -15,7 +17,7 @@ import PrimaryPhoto from "../assets/img/primaryschool/1.jpg";
 import KinderPhoto from "../assets/img/kindergarden/5.jpg";
 import ParallaxPhoto from "../assets/img/parallax.png";
 
-import Accordion from "../components/Accordion/Accordion";
+import { MAccordion } from "../components/Accordion/Accordion";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -25,6 +27,58 @@ import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import faqList from "../components/data/faqList";
 
 const Home = () => {
+  const textAnimation = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.7 },
+    }),
+  };
+  const connectionAnimation = {
+    hidden: {
+      y: 0,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.7 },
+    }),
+  };
+
+  const cardAnimation = {
+    hidden: {
+      y: -50,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.7 },
+    }),
+  };
+
+  const btnAnimation = {
+    hidden: {
+      y: -100,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.2, duration: 0.7 },
+    }),
+  };
+
+  const ref = useRef(null);
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const [modalActive, setModalActive] = useState(false);
   const form = useRef();
 
@@ -48,8 +102,8 @@ const Home = () => {
   return (
     <>
       <Modal active={modalActive} setActive={setModalActive}>
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="form__text">
+        <form className="modal-form" ref={form} onSubmit={sendEmail}>
+          <div className="modal-form__text">
             <div className="left-line"></div>
             <h1>Оставьте заявку</h1>
             <div className="right-line"></div>
@@ -64,7 +118,13 @@ const Home = () => {
         </form>
       </Modal>
 
-      <div className="hero">
+      <motion.div
+        className="hero"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <Swiper
           spaceBetween={30}
           effect={"fade"}
@@ -92,63 +152,128 @@ const Home = () => {
             <img src={SliderData[4]} alt="slide5" />
           </SwiperSlide>
         </Swiper>
-        <div className="hero__info">
-          <div className="info__text">
-            <h1>Андрей Кононов</h1>
-            <h2>профессиональный фотограф</h2>
-          </div>
-          <Button>подробнее</Button>
-        </div>
-      </div>
+        <motion.div
+          className="hero__info"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+        >
+          <motion.div className="info__text" variants={textAnimation}>
+            <motion.h1 custom={1} variants={textAnimation}>
+              Андрей Кононов
+            </motion.h1>
+            <motion.h2 custom={2} variants={textAnimation}>
+              профессиональный фотограф
+            </motion.h2>
+          </motion.div>
+          <motion.button
+            custom={3}
+            variants={textAnimation}
+            onClick={handleClick}
+          >
+            подробнее
+          </motion.button>
+        </motion.div>
+      </motion.div>
       <div className="hero__overlay"></div>
-      <div className="connection__container">
-        <div className="connection__info">
+      <motion.div
+        className="connection__container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2, once: true }}
+      >
+        <motion.div className="connection__info">
           <div className="connection__text">
-            <h1>Студия выпускных альбомов</h1>
-            <p>
+            <motion.h1 custom={1} variants={connectionAnimation}>
+              Студия выпускных альбомов
+            </motion.h1>
+            <motion.p custom={2} variants={connectionAnimation}>
               Уже 16 лет мы изготавливаем стильные выпускные альбомы, сохраняя
               живые эмоции ваших детей в фотографиях
-            </p>
+            </motion.p>
           </div>
-          <Button onClick={() => setModalActive(true)}>Задать вопрос</Button>
-        </div>
-      </div>
+          <MButton
+            custom={3}
+            variants={connectionAnimation}
+            onClick={() => setModalActive(true)}
+          >
+            Задать вопрос
+          </MButton>
+        </motion.div>
+      </motion.div>
       <Parallax strength={300} bgImage={ParallaxPhoto}>
-        <div className="portfolio__container">
-          <h1>Портфолио</h1>
-          <div className="portfolio">
-            <div className="portfolio__cards">
+        <motion.div
+          className="portfolio__container"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+        >
+          <motion.h1 custom={1} variants={connectionAnimation}>
+            Портфолио
+          </motion.h1>
+          <div className="portfolio" ref={ref}>
+            <motion.div
+              className="portfolio__cards"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.2, once: true }}
+            >
               <Link to={"/portfolio"}>
-                <PortfolioCard img={ElementaryPhoto} title="Старшая школа" />
+                <MPortfolioCard
+                  img={ElementaryPhoto}
+                  title="Старшая школа"
+                  custom={1}
+                  variants={cardAnimation}
+                />
               </Link>
               <Link to={"/primary"}>
-                <PortfolioCard img={PrimaryPhoto} title="Начальная школа" />
+                <MPortfolioCard
+                  img={PrimaryPhoto}
+                  title="Начальная школа"
+                  custom={2}
+                  variants={cardAnimation}
+                />
               </Link>
               <Link to={"/kinder"}>
-                <PortfolioCard img={KinderPhoto} title="Детский сад" />
+                <MPortfolioCard
+                  img={KinderPhoto}
+                  title="Детский сад"
+                  custom={3}
+                  variants={cardAnimation}
+                />
               </Link>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </Parallax>
-      <div className="video__container">
+      <motion.div
+        className="video__container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 1, once: true }}
+      >
         <VideoPlayer />
-        <p>
+        <motion.p variants={textAnimation} custom={1}>
           Для получения бесплатной консультации пишите нам в удобный для вас
           мессенджер
-        </p>
-        <div className="socials">
+        </motion.p>
+        <motion.div className="socials" variants={textAnimation} custom={2}>
           <button className="connection__button vk">Вконтакте</button>
           <button className="connection__button tg">Telegram</button>
           <button className="connection__button ws">Whatsapp</button>
-        </div>
-      </div>
-      <div className="accordion-bgc">
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="accordion-bgc"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5, once: true }}
+      >
         <div className="accordion__container">
-          <h1>FAQ</h1>
-          <Accordion faqList={faqList} />
+          <motion.h1 variants={cardAnimation}>FAQ</motion.h1>
+          <MAccordion faqList={faqList} variants={btnAnimation} />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

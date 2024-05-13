@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { forwardRef } from "react";
+import { motion } from "framer-motion";
 import AccordionItem from "./AccordionItem";
 
-const Accordion = ({ faqList }) => {
+export const Accordion = forwardRef(({ faqList }, ref) => {
   const [openId, setId] = useState(null);
 
   return (
-    <ul className="accordion">
+    <ul className="accordion" ref={ref}>
       {faqList.map((faqItem, id) => {
         return (
           <AccordionItem
@@ -18,6 +20,6 @@ const Accordion = ({ faqList }) => {
       })}
     </ul>
   );
-};
+});
 
-export default Accordion;
+export const MAccordion = motion(Accordion);

@@ -48,6 +48,54 @@
             font-family: "Forum";
             letter-spacing: 2px;
             color: $brown;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .navbar {
+        .navbar__menu {
+            display: flex;
+            gap: 30px;
+            text-transform: uppercase;
+
+            .navbar__item {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .navbar {
+        .navbar__menu {
+            display: flex;
+            gap: 20px;
+            text-transform: uppercase;
+
+            .navbar__item {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        .navbar__menu {
+            display: flex;
+            gap: 10px;
+            text-transform: uppercase;
+
+            .navbar__item {
+                font-size: 10px;
+                text-align: center;
+            }
+
+            .active {
+                font-size: 10px;
+            }
         }
     }
 }

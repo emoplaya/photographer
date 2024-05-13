@@ -17,9 +17,37 @@
             font-family: "Forum";
         }
 
-        h2 {
+        p {
             font-size: 24px;
             font-family: "Forum";
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .connection__container {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .connection__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            h1 {
+                font-size: 30px;
+                text-align: center;
+                font-family: "Forum";
+            }
+
+            p {
+                font-size: 18px;
+                text-align: center;
+            }
         }
     }
 }

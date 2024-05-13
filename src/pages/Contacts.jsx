@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import vk from "../assets/img/icons/vk-icon.svg";
 import telegram from "../assets/img/icons/telegram-icon.svg";
 import whatsapp from "../assets/img/icons/whatsapp-icon.svg";
@@ -14,7 +14,13 @@ import { Autoplay, EffectCoverflow } from "swiper/modules";
 const Contacts = () => {
   return (
     <>
-      <div className="contacts">
+      <motion.div
+        className="contacts"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
         <Swiper
           effect={"coverflow"}
           autoplay={{
@@ -24,7 +30,7 @@ const Contacts = () => {
             pauseOnMouseEnter: true,
           }}
           grabCursor={true}
-          centeredSlides={true}
+          centeredSlides={false}
           loop={true}
           slidesPerView={"3"} // Увеличьте это значение, если необходимо больше слайдов в одном ряду
           coverflowEffect={{
@@ -33,7 +39,7 @@ const Contacts = () => {
             depth: 100,
             modifier: 2.5,
           }}
-          centerInsufficientSlides={true}
+          centerInsufficientSlides={false}
           speed={2000}
           modules={[Autoplay, EffectCoverflow]}
           className="swiper"
@@ -69,7 +75,7 @@ const Contacts = () => {
           </li>
         </ul>
         <p>г. Москва и Московская область</p>
-      </div>
+      </motion.div>
     </>
   );
 };

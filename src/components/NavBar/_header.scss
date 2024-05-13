@@ -155,3 +155,39 @@
 .nav-profile-dropdown p:hover {
     color: $brown;
 }
+
+@media (max-width: 1050px) {
+    .header__logo img {
+        width: 180px;
+    }
+
+    .header__menu .menu__list {
+        gap: 20px;
+    }
+
+    .header__menu .menu__list .enter__button {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width:900px) {
+    .header__logo img {
+        width: 160px;
+    }
+
+    .header__menu .menu__list {
+        gap: 15px;
+    }
+
+    .header__menu .menu__list .enter__button {
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .header__menu .menu__list {
+        display: none;
+    }
+}

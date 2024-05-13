@@ -1,9 +1,7 @@
 .background {
     background-image: url('../../assets/img/parallax.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: repeat;
     background-size: cover;
-    height: 100vh;
 }
 
 .photo-display-container {
@@ -27,7 +25,7 @@
 
 .photo-display-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 30px;
     gap: 30px;
     row-gap: 50px;

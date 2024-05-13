@@ -1,11 +1,13 @@
 import React from "react";
+import { forwardRef } from "react";
+import { motion } from "framer-motion";
 
-const Button = ({ onClick, children }) => {
+export const Button = forwardRef(({ onClick, children }, ref) => {
   return (
-    <div className="button" onClick={onClick}>
+    <div className="button" onClick={onClick} ref={ref}>
       {children}
     </div>
   );
-};
+});
 
-export default Button;
+export const MButton = motion(Button);

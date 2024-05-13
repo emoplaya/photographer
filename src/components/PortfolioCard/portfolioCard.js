@@ -1,12 +1,14 @@
 import React from "react";
+import { forwardRef } from "react";
+import { motion } from "framer-motion";
 
-const portfolioCard = ({ img, title }) => {
+export const portfolioCard = forwardRef(({ img, title }, ref) => {
   return (
-    <div className="card">
+    <div className="card" ref={ref}>
       <img src={img} alt="" />
       <h2 className="card__title">{title}</h2>
     </div>
   );
-};
+});
 
-export default portfolioCard;
+export const MPortfolioCard = motion(portfolioCard);

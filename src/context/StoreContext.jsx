@@ -69,7 +69,7 @@ const StoreContextProvider = (props) => {
       }
     }
     loadData();
-  }, []);
+  }, [token]);
   const contextValue = {
     photos_list,
     cartItems,

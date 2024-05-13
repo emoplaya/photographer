@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import addIcon from "../../assets/img/icons/add_icon_white.png";
 import removeIcon from "../../assets/img/icons/remove_icon_red.png";
@@ -7,14 +7,33 @@ import addIconGreen from "../../assets/img/icons/add_icon_green.png";
 const PhotoItem = ({ id, name, price, category, image }) => {
   const { cartItems, addToCart, removeFromCart, url } =
     useContext(StoreContext);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    const img = new Image();
+    img.src = url + "/images/" + image;
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+
+    // Предотвращение скачивания изображения через canvas
+    canvas.oncontextmenu = () => false;
+  }, [url, image]);
+
   return (
     <div className="photo-item">
       <div className="photo-item-img-container">
-        <img
+        <canvas
+          ref={canvasRef}
           className="photo-item-image"
-          src={url + "/images/" + image}
-          alt=""
-        />
+          width="283"
+          height="427.5"
+        ></canvas>
+        {/* Добавляем водяной знак */}
+        <div className="watermark"></div>
 
         {!cartItems[id] ? (
           <img

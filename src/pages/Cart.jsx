@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { StoreContext } from "../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,7 @@ const Cart = () => {
   const { cartItems, photos_list, removeFromCart, getTotalCartAmount, url } =
     useContext(StoreContext);
   const navigate = useNavigate();
+
   return (
     <div className="cart__container">
       <div className="cart">
@@ -25,7 +26,29 @@ const Cart = () => {
               return (
                 <div>
                   <div className="cart-items-title cart-items-item">
-                    <img src={url + "/images/" + item.image} alt="" />
+                    {/* Заменяем <img> на <canvas> */}
+                    <canvas
+                      ref={(canvasRef) => {
+                        if (canvasRef) {
+                          const canvas = canvasRef;
+                          const ctx = canvas.getContext("2d");
+                          const img = new Image();
+                          img.src = url + "/images/" + item.image;
+                          img.onload = () => {
+                            ctx.drawImage(
+                              img,
+                              0,
+                              0,
+                              canvas.width,
+                              canvas.height
+                            );
+                          };
+                          canvas.oncontextmenu = () => false; // Предотвращаем скачивание
+                        }
+                      }}
+                      width="100" // Задайте желаемый размер
+                      height="150" // Задайте желаемый размер
+                    />
                     <p>{item.name}</p>
                     <p>{item.price} ₽</p>
                     <p>{cartItems[item._id]}</p>

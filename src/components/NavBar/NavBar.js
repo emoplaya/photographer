@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/img/icons/logo.svg";
+import logo1 from "../../assets/img/icons/logo1.svg";
 import cart from "../../assets/img/icons/cart.svg";
 import profile from "../../assets/img/icons/profile.svg";
 import bag from "../../assets/img/icons/bag.svg";
@@ -20,7 +20,7 @@ const NavBar = ({ setShowLogin }) => {
     <header className="header">
       <NavLink to={"/"}>
         <div className="header__logo">
-          <img width="201" height="48" src={logo} alt="logo" />
+          <img width="201" height="48" src={logo1} alt="logo" />
         </div>
       </NavLink>
       <nav className="header__menu menu">

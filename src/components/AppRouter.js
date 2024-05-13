@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   BrowserRouter as Router,
   Route,
@@ -31,12 +32,14 @@ const publicRoutes = [
 ];
 const AppRouter = () => {
   return (
-    <Routes>
-      {publicRoutes.map(({ path, Component }) => {
-        return <Route key={path} path={path} element={<Component />} />;
-      })}
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+    <AnimatePresence mode="wait">
+      <Routes>
+        {publicRoutes.map(({ path, Component }) => {
+          return <Route key={path} path={path} element={<Component />} />;
+        })}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

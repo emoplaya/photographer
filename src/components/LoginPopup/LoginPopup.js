@@ -53,7 +53,7 @@ const LoginPopup = ({ setShowLogin }) => {
               onChange={onChangeHandler}
               value={data.name}
               type="text"
-              placeholder="Your name"
+              placeholder="Ваше имя"
               required
             />
           )}
@@ -62,7 +62,7 @@ const LoginPopup = ({ setShowLogin }) => {
             onChange={onChangeHandler}
             value={data.email}
             type="email"
-            placeholder="Your email"
+            placeholder="email"
             required
           />
           <input
@@ -70,7 +70,7 @@ const LoginPopup = ({ setShowLogin }) => {
             onChange={onChangeHandler}
             value={data.password}
             type="password"
-            placeholder="Password"
+            placeholder="пароль"
             required
           />
         </div>
@@ -78,7 +78,7 @@ const LoginPopup = ({ setShowLogin }) => {
           {currentState === "Sign Up" ? "Create account" : "Login"}
         </button>
         <div className="login-popup-condition">
-          <input type="checkbox" required />
+          <input className="checkbox" type="checkbox" required />
           <p>By continuing</p>
         </div>
         {currentState === "Login" ? (
