@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import vk from "../assets/img/icons/vk-icon.svg";
-import telegram from "../assets/img/icons/telegram-icon.svg";
-import whatsapp from "../assets/img/icons/whatsapp-icon.svg";
+import vk from "../../assets/img/icons/vk-icon.svg";
+import telegram from "../../assets/img/icons/telegram-icon.svg";
+import whatsapp from "../../assets/img/icons/whatsapp-icon.svg";
 
-import ContactsSlider from "../components/data/ContactsSliderData";
+import ContactsSlider from "../../components/data/ContactsSliderData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -42,7 +42,7 @@ const Contacts = () => {
           centerInsufficientSlides={false}
           speed={2000}
           modules={[Autoplay, EffectCoverflow]}
-          className="swiper"
+          className="contacts-swiper"
         >
           <SwiperSlide>
             <img src={ContactsSlider[0]} alt="slide_image" />
@@ -54,9 +54,12 @@ const Contacts = () => {
             <img src={ContactsSlider[2]} alt="slide_image" />
           </SwiperSlide>
         </Swiper>
-        <p>
-          Для консультации и записи на съемку выберите привычный способ общения
-        </p>
+        <div className="contacts__container">
+          <p>
+            Для консультации и записи на съемку выберите привычный способ
+            общения
+          </p>
+        </div>
         <div className="contacts-text">
           <div className="left-line"></div>
           <h1>Контакты</h1>

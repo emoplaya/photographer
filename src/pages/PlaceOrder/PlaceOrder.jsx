@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { StoreContext } from "../context/StoreContext";
+import { StoreContext } from "../../context/StoreContext";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, token, photos_list, cartItems, url } =

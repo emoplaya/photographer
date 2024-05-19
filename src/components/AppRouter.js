@@ -6,16 +6,16 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import Home from "../pages/Home";
-import Contacts from "../pages/Contacts";
-import Portfolio from "../pages/Portfolio";
-import Reviews from "../pages/Reviews";
-import PrimarySchool from "../pages/PrimarySchool";
-import KinderGarden from "../pages/KinderGarden";
-import Costumes from "../pages/Costumes";
-import Cart from "../pages/Cart";
-import PlaceOrder from "../pages/PlaceOrder";
-import PhotosDisplay from "../pages/PhotosDisplay";
+import Home from "../pages/Home/Home";
+import Contacts from "../pages/Contacts/Contacts";
+import Portfolio from "../pages/Portfolio/Portfolio";
+import Reviews from "../pages/Reviews/Reviews";
+import PrimarySchool from "../pages/Portfolio/PrimarySchool";
+import KinderGarden from "../pages/Portfolio/KinderGarden";
+import Costumes from "../pages/Portfolio/Costumes";
+import Cart from "../pages/Cart/Cart";
+import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
+import PhotosDisplay from "../pages/PhotosDisplay/PhotosDisplay";
 
 const publicRoutes = [
   { path: "/", Component: Home },

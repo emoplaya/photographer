@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ReviewBlock from "../components/ReviewBlock/ReviewBlock";
-import photo1 from "../assets/img/kindergarden/1.jpg";
-import photo2 from "../assets/img/kindergarden/6.jpg";
-import photo3 from "../assets/img/kindergarden/3.jpg";
-import photo4 from "../assets/img/kindergarden/4.jpg";
-import photo5 from "../assets/img/kindergarden/5.jpg";
+import ReviewBlock from "../../components/ReviewBlock/ReviewBlock";
+import photo1 from "../../assets/img/kindergarden/1.jpg";
+import photo2 from "../../assets/img/kindergarden/6.jpg";
+import photo3 from "../../assets/img/kindergarden/3.jpg";
+import photo4 from "../../assets/img/kindergarden/4.jpg";
+import photo5 from "../../assets/img/kindergarden/5.jpg";
 const Reviews = () => {
   return (
     <motion.div

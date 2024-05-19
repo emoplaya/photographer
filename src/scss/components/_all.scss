@@ -1,12 +1,12 @@
-@import './hero';
-@import './connection';
-@import './portfolio';
-@import './contacts';
-@import './portfoliosortbutton';
-@import './review';
-@import './connectionbutton';
+@import '../../pages/Home/hero';
+@import '../../pages/Home/connection';
+@import '../../pages/Home/portfolio';
+@import '../../pages/Contacts/contacts';
+@import '../../pages/Portfolio/portfoliosortbutton';
+@import '../../pages/Reviews/review';
+@import '../../pages/Home/connectionbutton';
 @import './overlay';
-@import './cart';
+@import '../../pages/Cart/cart';
 
 @import '../../components/VideoPlayer/video';
 @import '../../components/PortfolioCard/portfoliocard';
@@ -20,6 +20,6 @@
 @import '../../components/Button/button';
 @import '../../components/LoginPopup/loginpopup';
 @import '../../components/PhotoItem/photoitem';
-@import './photodisplay';
-@import './placeorder';
+@import '../../pages/PhotosDisplay/photodisplay';
+@import '../../pages/PlaceOrder/placeorder';
 @import '../../components/Preloader/preloader';

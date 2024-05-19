@@ -6,7 +6,7 @@ import axios from "axios";
 const LoginPopup = ({ setShowLogin }) => {
   const { url, setToken } = useContext(StoreContext);
 
-  const [currentState, setCurrentState] = useState("Login");
+  const [currentState, setCurrentState] = useState("Войти");
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -22,7 +22,7 @@ const LoginPopup = ({ setShowLogin }) => {
   const onLogin = async (event) => {
     event.preventDefault();
     let newUrl = url;
-    if (currentState === "Login") {
+    if (currentState === "Войти") {
       newUrl += "/api/user/login";
     } else {
       newUrl += "/api/user/register";
@@ -45,7 +45,7 @@ const LoginPopup = ({ setShowLogin }) => {
           <img onClick={() => setShowLogin(false)} src={close} alt="" />
         </div>
         <div className="login-popup-inputs">
-          {currentState === "Login" ? (
+          {currentState === "Войти" ? (
             <></>
           ) : (
             <input
@@ -62,7 +62,7 @@ const LoginPopup = ({ setShowLogin }) => {
             onChange={onChangeHandler}
             value={data.email}
             type="email"
-            placeholder="email"
+            placeholder="Email"
             required
           />
           <input
@@ -70,26 +70,28 @@ const LoginPopup = ({ setShowLogin }) => {
             onChange={onChangeHandler}
             value={data.password}
             type="password"
-            placeholder="пароль"
+            placeholder="Пароль"
             required
           />
         </div>
         <button type="submit">
-          {currentState === "Sign Up" ? "Create account" : "Login"}
+          {currentState === "Регистрация" ? "Создать аккаунт" : "Войти"}
         </button>
         <div className="login-popup-condition">
           <input className="checkbox" type="checkbox" required />
-          <p>By continuing</p>
+          <p>Я согласен с обработкой персональных данных</p>
         </div>
-        {currentState === "Login" ? (
+        {currentState === "Войти" ? (
           <p>
-            Create a new account?{" "}
-            <span onClick={() => setCurrentState("Sign Up")}>Click here</span>
+            У вас нет аккаунта?{" "}
+            <span onClick={() => setCurrentState("Регистрация")}>
+              Зарегистрируйтесь
+            </span>
           </p>
         ) : (
           <p>
-            Already have an account?{" "}
-            <span onClick={() => setCurrentState("Login")}>Click here</span>
+            Уже есть аккаунт?{" "}
+            <span onClick={() => setCurrentState("Войти")}>Войти</span>
           </p>
         )}
       </form>

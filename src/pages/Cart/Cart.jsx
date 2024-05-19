@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { StoreContext } from "../context/StoreContext";
+import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -48,6 +48,7 @@ const Cart = () => {
                       }}
                       width="100" // Задайте желаемый размер
                       height="150" // Задайте желаемый размер
+                      key={item._id}
                     />
                     <p>{item.name}</p>
                     <p>{item.price} ₽</p>

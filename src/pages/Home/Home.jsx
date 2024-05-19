@@ -4,27 +4,27 @@ import emailjs from "@emailjs/browser";
 
 import { motion } from "framer-motion";
 
-import { MButton } from "../components/Button/Button";
-import Modal from "../components/ModalEmail/Modal";
-import SliderData from "../components/data/SliderData";
-import { MPortfolioCard } from "../components/PortfolioCard/portfolioCard";
+import { MButton } from "../../components/Button/Button";
+import Modal from "../../components/ModalEmail/Modal";
+import SliderData from "../../components/data/SliderData";
+import { MPortfolioCard } from "../../components/PortfolioCard/portfolioCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Parallax } from "react-parallax";
 
-import ElementaryPhoto from "../assets/img/elementaryschool/8.jpg";
-import PrimaryPhoto from "../assets/img/primaryschool/1.jpg";
-import KinderPhoto from "../assets/img/kindergarden/5.jpg";
-import ParallaxPhoto from "../assets/img/parallax.png";
+import ElementaryPhoto from "../../assets/img/elementaryschool/8.jpg";
+import PrimaryPhoto from "../../assets/img/primaryschool/1.jpg";
+import KinderPhoto from "../../assets/img/kindergarden/5.jpg";
+import ParallaxPhoto from "../../assets/img/parallax.png";
 
-import { MAccordion } from "../components/Accordion/Accordion";
+import { MAccordion } from "../../components/Accordion/Accordion";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade } from "swiper/modules";
-import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
-import faqList from "../components/data/faqList";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import faqList from "../../components/data/faqList";
 
 const Home = () => {
   const textAnimation = {

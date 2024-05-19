@@ -3,11 +3,6 @@
     margin-bottom: 100px;
 }
 
-.cart-icon {
-    position: absolute;
-    right: 400px;
-    top: 15px;
-}
 
 .cart-items-title {
     display: grid;
@@ -116,4 +111,18 @@
     border: none;
     color: white;
     border-radius: 4px;
+}
+
+@media (max-width: 750px) {
+    .cart-bottom {
+        flex-direction: column;
+    }
+
+    .cart-items-title {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+        align-items: center;
+        color: #2d2d2d;
+        font-size: max(1vw, 12px);
+    }
 }

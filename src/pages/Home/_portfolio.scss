@@ -1,0 +1,62 @@
+.portfolio__container {
+    h1 {
+        margin-top: 90px;
+        font-family: "Forum";
+        font-size: 48px;
+        color: white;
+        position: absolute;
+    }
+
+
+
+    .portfolio {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .portfolio__cards {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 37px;
+
+
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .portfolio__container {
+        h1 {
+            margin-top: 90px;
+            font-family: "Forum";
+            font-size: 48px;
+            color: white;
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+
+        }
+
+
+        .portfolio {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y: scroll;
+            margin-bottom: 40px;
+
+            .portfolio__cards {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 37px;
+
+            }
+        }
+    }
+}
