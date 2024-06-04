@@ -16,6 +16,8 @@ import Costumes from "../pages/Portfolio/Costumes";
 import Cart from "../pages/Cart/Cart";
 import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
 import PhotosDisplay from "../pages/PhotosDisplay/PhotosDisplay";
+import Verify from "../pages/Verify/Verify";
+import MyOrders from "../pages/MyOrders/MyOrders";
 
 const publicRoutes = [
   { path: "/", Component: Home },
@@ -29,6 +31,8 @@ const publicRoutes = [
   { path: "/cart", Component: Cart },
   { path: "/order", Component: PlaceOrder },
   { path: "/photosdisplay", Component: PhotosDisplay },
+  { path: "/verify", Component: Verify },
+  { path: "/myorders", Component: MyOrders },
 ];
 const AppRouter = () => {
   return (

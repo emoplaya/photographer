@@ -1,5 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../../context/StoreContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, token, photos_list, cartItems, url } =
@@ -9,6 +11,11 @@ const PlaceOrder = () => {
     firstName: "",
     lastName: "",
     email: "",
+    street: "",
+    city: "",
+    state: "",
+    zipcode: "",
+    country: "",
     phone: "",
   });
 
@@ -28,8 +35,33 @@ const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     });
-    console.log(orderItems);
+
+    let orderData = {
+      address: data,
+      items: orderItems,
+      amount: getTotalCartAmount() + 2,
+    };
+
+    let response = await axios.post(url + "/api/order/place", orderData, {
+      headers: { token },
+    });
+    if (response.data.success) {
+      const { session_url } = response.data;
+      window.location.replace(session_url);
+    } else {
+      alert("Error");
+    }
   };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/cart");
+    } else if (getTotalCartAmount() === 0) {
+      navigate("/cart");
+    }
+  }, [token]);
 
   return (
     <form onSubmit={placeOrder} className="place-order">
@@ -37,6 +69,7 @@ const PlaceOrder = () => {
         <p className="title">Information</p>
         <div className="multi-fields">
           <input
+            required
             name="firstName"
             onChange={onChangeHandler}
             value={data.firstName}
@@ -44,6 +77,7 @@ const PlaceOrder = () => {
             placeholder="Ваше имя"
           />
           <input
+            required
             name="lastName"
             onChange={onChangeHandler}
             value={data.lastName}
@@ -52,12 +86,15 @@ const PlaceOrder = () => {
           />
         </div>
         <input
+          required
+          name="email"
           type="email"
           onChange={onChangeHandler}
           value={data.email}
           placeholder="Почта"
         />
         <input
+          required
           name="phone"
           onChange={onChangeHandler}
           value={data.phone}
