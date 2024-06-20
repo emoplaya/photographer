@@ -37,7 +37,7 @@
 }
 
 .card:hover {
-    transform: translateY(20px);
+    transform: translateY(0px);
 }
 
 .card:before {
@@ -61,4 +61,15 @@
 .card:hover .card__title {
     opacity: 1;
     transform: translateY(0px);
+}
+
+@media (max-width: 1050px) {
+    .card:before {
+
+        opacity: 1;
+    }
+
+    .card__title {
+        opacity: 1;
+    }
 }

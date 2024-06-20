@@ -1,4 +1,8 @@
 .my-orders {
+    h2 {
+        margin-bottom: 20px;
+    }
+
     max-width: 1215px;
     padding-top: 100px;
     margin: 0px auto;
@@ -67,5 +71,35 @@
 
     .my-orders-order button {
         font-size: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .my-orders-order {
+        grid-template-columns: 1fr 2fr 1fr;
+        row-gap: 5px;
+        font-size: 12px;
+    }
+
+    .my-orders-order button {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .my-orders-order {
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .my-orders-order img {
+        margin: 0 auto;
+    }
+
+    .my-orders-order button {
+        font-size: 10px;
+        height: 10px;
     }
 }
